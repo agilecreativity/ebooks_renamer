@@ -1,5 +1,10 @@
 ### Changelogs
 
+#### 0.0.5
+
+- Improve code structure
+- Remove 'pry' gem from library code (only for development)
+
 #### 0.0.4
 
 - Allow the next file to be processed on unexpected error in the main loop

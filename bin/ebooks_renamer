@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require_relative '../lib/ebooks_renamer'
+include EbooksRenamer
+EbooksRenamer::CLI.start(ARGV)

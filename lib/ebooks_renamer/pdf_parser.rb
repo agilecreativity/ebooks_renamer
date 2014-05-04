@@ -11,6 +11,11 @@ module EbooksRenamer
                            pages:  reader.page_count
           end
         end
+      rescue Exception => e
+        # Note: we skip the file that we can't process
+        # and allow the process to continue
+        puts "Skip file '#{filename}'"
+        puts "Due to the unexpected error: #{e.message}"
       end
     end
   end

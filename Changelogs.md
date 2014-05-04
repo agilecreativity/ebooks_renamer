@@ -1,5 +1,9 @@
 ### Changelogs
 
+#### 0.0.3
+
+- Log the errors and allow the process to continue on unexpected error
+
 #### 0.0.2
 
 - Bug fix - make 'formatted_name' work correctly

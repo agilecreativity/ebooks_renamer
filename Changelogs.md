@@ -1,5 +1,9 @@
 ### Changelogs
 
+#### 0.0.4
+
+- Allow the next file to be processed on unexpected error in the main loop
+
 #### 0.0.3
 
 - Log the errors and allow the process to continue on unexpected error

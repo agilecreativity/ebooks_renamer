@@ -14,13 +14,20 @@ module EbooksRenamer
     def rename(options = {})
       files = CodeLister.files(options)
       files.each_with_index do |file, index|
-        new_name = formatted_name(file, options[:sep_string])
-        if file != new_name
-          puts "#{index + 1} of #{files.length}: Old name: '#{file}'"
-          puts "#{index + 1} of #{files.length}: New name: '#{new_name}'"
-          FileUtils.mv(file, new_name) if options[:commit]
-        else
-          puts "#{index + 1} of #{files.length}: Result  : '#{file}' is identical so no action taken."
+        # process as many files as possible
+        begin
+          new_name = formatted_name(file, options[:sep_string])
+          if file != new_name
+            puts "#{index + 1} of #{files.length}: Old name: '#{file}'"
+            puts "#{index + 1} of #{files.length}: New name: '#{new_name}'"
+            FileUtils.mv(file, new_name) if options[:commit]
+          else
+            puts "#{index + 1} of #{files.length}: Result  : '#{file}' is identical so no action taken."
+          end
+        rescue Exception => e
+          puts "Skip file '#{file}'"
+          puts "Due to the unexpected error: #{e.message}"
+          next
         end
       end
       unless options[:commit]

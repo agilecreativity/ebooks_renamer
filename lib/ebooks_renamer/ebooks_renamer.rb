@@ -14,16 +14,13 @@ module EbooksRenamer
     def rename(options = {})
       files = CodeLister.files(options)
       files.each_with_index do |file, index|
-        puts "Process file #{index + 1} of #{files.length} : #{file}"
         new_name = formatted_name(file, options[:sep_string])
         if file != new_name
-          puts "Old name: '#{file}'"
-          puts "New name: '#{new_name}'"
-          if options[:commit]
-            FileUtils.mv(file, new_name)
-          end
+          puts "#{index + 1} of #{files.length}: Old name: '#{file}'"
+          puts "#{index + 1} of #{files.length}: New name: '#{new_name}'"
+          FileUtils.mv(file, new_name) if options[:commit]
         else
-          puts "File #{file} is identical so no action taken."
+          puts "#{index + 1} of #{files.length}: Result  : '#{file}' is identical so no action taken."
         end
       end
       unless options[:commit]
@@ -42,11 +39,12 @@ module EbooksRenamer
         name += " by #{meta.author}"    unless meta.author.blank?
         name += " #{meta.publisher}"    unless meta.publisher.blank?
         name += " #{meta.pages} pages"  unless meta.pages.blank?
+
         # return the sanitized file name with full path
         [File.dirname(file),
          File::SEPARATOR,
-         FilenameCleaner.sanitize_filename(name, sep_string),
-         File.extname(file)].join('')
+         FilenameCleaner.sanitize_filename([name, File.extname(file)].join(''),
+                                           sep_string)].join('')
       else
         # return the full path of the original file
         File.expand_path(file)

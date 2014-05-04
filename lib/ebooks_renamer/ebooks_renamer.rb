@@ -13,20 +13,23 @@ module EbooksRenamer
   class << self
     def rename(options = {})
       files = CodeLister.files(options)
-      files.each do |file|
-        puts "Process file #{file}"
+      files.each_with_index do |file, index|
+        puts "Process file #{index + 1} of #{files.length} : #{file}"
         new_name = formatted_name(file, options[:sep_string])
         if file != new_name
+          puts "Old name: '#{file}'"
+          puts "New name: '#{new_name}'"
           if options[:commit]
-            puts "Rename from: '#{file}'"
-            puts "         to: '#{new_name}'"
-            FileUtils.mv(file, new_name) if options[:commit]
-          else
-            puts "No changes will take place as this is a dry run"
+            FileUtils.mv(file, new_name)
           end
         else
-          puts "File #{file} is already have been renamed!"
+          puts "File #{file} is identical so no action taken."
         end
+      end
+      unless options[:commit]
+        puts '------------------------------------------------------------------'
+        puts 'This is a dry run only, to actually rename please specify --commit'
+        puts '------------------------------------------------------------------'
       end
     end
 

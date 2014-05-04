@@ -3,10 +3,14 @@
 [![Gem Version](https://badge.fury.io/rb/ebooks_renamer.svg)](http://badge.fury.io/rb/ebooks_renamer)
 [![Dependency Status](https://gemnasium.com/agilecreativity/ebooks_renamer.png)](https://gemnasium.com/agilecreativity/ebooks_renamer)
 [![Code Climate](https://codeclimate.com/github/agilecreativity/ebooks_renamer.png)](https://codeclimate.com/github/agilecreativity/ebooks_renamer)
+[![Endorse](https://api.coderwall.com/agilecreativity/endorsecount.png)](https://coderwall.com/agilecreativity)
 
 Rename multiple ebook files using the power of ruby.
 This is the alternate version of my [ebook_renamer][] gem that implemented in
 pure ruby using the power of other gems for metadata extraction.
+
+The original [ebook_renamer][] gem requires the [Calibre Meta][] to be installed,
+but this gem does not need any third party software to be installed.
 
 ### Features
 
@@ -117,3 +121,4 @@ ebooks_renamer rename --base-dir . --sep-string '-' --recursive --inc-words andr
 [mobi]: https://rubygems.org/gems/mobi
 [pdf-reader]: https://rubygems.org/gems/pdf-reader
 [epubinfo]: https://rubygems.org/gems/epubinfo
+[Calibre Meta]: http://manual.calibre-ebook.com/cli/ebook-meta.html

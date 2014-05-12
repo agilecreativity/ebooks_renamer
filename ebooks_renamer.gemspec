@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.description   = %q{Bulk rename multiple ebook files (pdf, epub, mobi) using embedded metadata if available (pure ruby implementation)}
   spec.homepage      = 'https://github.com/agilecreativity/ebooks_renamer'
   spec.license       = 'MIT'
-  spec.files         = Dir.glob("{bin,lib,templates}/**/*") + %w(Gemfile
+  spec.files         = Dir.glob('{bin,lib,templates}/**/*') + %w(Gemfile
                                                                  Rakefile
                                                                  ebooks_renamer.gemspec
                                                                  README.md

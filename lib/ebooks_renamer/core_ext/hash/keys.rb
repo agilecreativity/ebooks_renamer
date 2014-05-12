@@ -25,12 +25,12 @@ class Hash
   # hash.symbolize_keys
   # => { name: "Rob", age: "28" }
   def symbolize_keys
-    transform_keys{ |key| key.to_sym rescue key }
+    transform_keys { |key| key.to_sym rescue key }
   end
 
   # File activesupport/lib/active_support/core_ext/hash/keys.rb, line 135
   def symbolize_keys!
-    transform_keys!{ |key| key.to_sym rescue key }
+    transform_keys! { |key| key.to_sym rescue key }
   end
 
   # Merges the caller into +other_hash+. For example,
@@ -50,6 +50,6 @@ class Hash
   # Destructive +reverse_merge+.
   def reverse_merge!(other_hash)
     # right wins if there is no left
-    merge!(other_hash) { |key,left,right| left }
+    merge!(other_hash) { |key, left, right| left }
   end
 end

@@ -5,20 +5,17 @@ module EbooksRenamer
   class CLI < Thor
     desc 'rename', 'Rename ebooks based on given criteria'
     method_option *AgileUtils::Options::BASE_DIR
-    method_option *AgileUtils::Options::INC_WORDS
-    method_option *AgileUtils::Options::EXC_WORDS
-    method_option *AgileUtils::Options::IGNORE_CASE
     method_option *AgileUtils::Options::RECURSIVE
     method_option *AgileUtils::Options::VERSION
 
     method_option :sep_string,
-                  aliases: "-s",
-                  desc: "Separator string between words in filename",
-                  default: "."
+                  aliases: '-s',
+                  desc: 'Separator string between words in filename',
+                  default: '.'
 
     method_option :commit,
-                  aliases: "-c",
-                  desc: "Make change permanent",
+                  aliases: '-c',
+                  desc: 'Make change permanent',
                   type: :boolean,
                   default: false
 
@@ -44,10 +41,6 @@ Usage:
 Options:
   -b, [--base-dir=BASE_DIR]                # Base directory
                                            # Default: . (current directory)
-  -n, [--inc-words=one two three]          # List of words to be included in the result if any
-  -x, [--exc-words=one two three]          # List of words to be excluded from the result if any
-  -i, [--ignore-case], [--no-ignore-case]  # Match case insensitively
-                                           # Default: true
   -r, [--recursive], [--no-recursive]      # Search for files recursively
                                            # Default: true
   -v, [--version], [--no-version]          # Display version information
@@ -60,11 +53,5 @@ Rename ebooks based on given criteria
     end
 
     default_task :usage
-
-    # private
-    #
-    # def process(opts = {})
-    #   puts "Your options #{opts}"
-    # end
   end
 end

@@ -1,5 +1,5 @@
-require "bundler/gem_tasks"
-require "rake/testtask"
+require 'bundler/gem_tasks'
+require 'rake/testtask'
 project_name = 'ebooks_renamer'
 
 Rake::TestTask.new do |t|

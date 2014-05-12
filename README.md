@@ -1,9 +1,12 @@
-## EbooksRenamer
+## ebooks_renamer
 
-[![Gem Version](https://badge.fury.io/rb/ebooks_renamer.svg)](http://badge.fury.io/rb/ebooks_renamer)
-[![Dependency Status](https://gemnasium.com/agilecreativity/ebooks_renamer.png)](https://gemnasium.com/agilecreativity/ebooks_renamer)
-[![Code Climate](https://codeclimate.com/github/agilecreativity/ebooks_renamer.png)](https://codeclimate.com/github/agilecreativity/ebooks_renamer)
-[![Endorse](https://api.coderwall.com/agilecreativity/endorsecount.png)](https://coderwall.com/agilecreativity)
+[![Gem Version](https://badge.fury.io/rb/ebooks_renamer.svg)][gem]
+[![Dependency Status](https://gemnasium.com/agilecreativity/ebooks_renamer.png)][gemnasium]
+[![Code Climate](https://codeclimate.com/github/agilecreativity/ebooks_renamer.png)][codeclimate]
+
+[gem]: http://badge.fury.io/rb/ebooks_renamer
+[gemnasium]: https://gemnasium.com/agilecreativity/ebooks_renamer
+[codeclimate]: https://codeclimate.com/github/agilecreativity/ebooks_renamer
 
 Rename multiple ebook files using the power of ruby.
 This is the alternate version of my [ebook_renamer][] gem that implemented in
@@ -62,10 +65,6 @@ Usage:
 Options:
   -b, [--base-dir=BASE_DIR]                # Base directory
                                            # Default: . (current directory)
-  -n, [--inc-words=one two three]          # List of words to be included in the result if any
-  -x, [--exc-words=one two three]          # List of words to be excluded from the result if any
-  -i, [--ignore-case], [--no-ignore-case]  # Match case insensitively
-                                           # Default: true
   -r, [--recursive], [--no-recursive]      # Search for files recursively
                                            # Default: true
   -v, [--version], [--no-version]          # Display version information
@@ -84,8 +83,8 @@ Here is your typical usage of the gem
 # change to the directory that contain your ebook files
 cd ~/Dropbox/ebooks
 
-# set version of your ruby
-rbenv local 2.1.1 # if you are using rbenv as your ruby manager
+# set version of your ruby to a recent version
+rbenv local 2.1.2 # or any version after 1.9+
 
 # install the gem
 gem install ebooks_renamer
@@ -100,13 +99,6 @@ ebooks_renamer rename --base-dir . --recursive --commit
 # To change the default separator string `sep_string` (default to '.' - dot string)
 # e.g. this will use the '_' (underscore) to separate each word in the output
 ebooks_renamer rename --base-dir . --sep-string '_' --recursive --commit
-
-# To only include/exclude certain files in the result you can use the
-# `--exc-words` or `--exc-words` etc
-# e.g. The following will perform the rename only on the files that contain the word 'android' or 'iphone'
-# in the title.
-
-ebooks_renamer rename --base-dir . --sep-string '-' --recursive --inc-words android iphone --commit
 ```
 
 ### Contributing

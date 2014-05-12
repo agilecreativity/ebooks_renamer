@@ -1,8 +1,12 @@
 ### Changelogs
 
+#### 0.1.1
+
+- Simplify the api and minor code cleanup
+
 #### 0.1.0
 
-- First [Semantic Versioning] release
+- First [Semantic Versioning][] release
 
 #### 0.0.4
 

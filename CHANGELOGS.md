@@ -1,5 +1,9 @@
 ### Changelogs
 
+#### 0.1.0
+
+- First [Semantic Versioning] release
+
 #### 0.0.4
 
 - Allow the next file to be processed on unexpected error in the main loop
@@ -17,3 +21,5 @@
 #### 0.0.1
 
 - Initial release
+
+[Semantic Versioning]: http://semver.org

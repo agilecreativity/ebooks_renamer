@@ -26,7 +26,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'pdf-reader', '~> 1.3.3'
   spec.add_runtime_dependency 'mobi', '~> 1.0.0'
   spec.add_runtime_dependency 'epubinfo', '~> 0.4.3'
-  spec.add_runtime_dependency 'filename_cleaner', '~> 0.1'
+  spec.add_runtime_dependency 'filename_cleaner', '~> 0.3'
   spec.add_runtime_dependency 'code_lister', '~> 0.1'
   spec.add_development_dependency 'awesome_print', '~> 1.2'
   spec.add_development_dependency 'bundler', '~> 1.5'

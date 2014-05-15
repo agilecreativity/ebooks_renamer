@@ -50,8 +50,9 @@ module EbooksRenamer
         # return the sanitized file name with full path
         [File.dirname(file),
          File::SEPARATOR,
-         FilenameCleaner.sanitize_filename([name, File.extname(file)].join(''),
-                                           sep_string)].join('')
+         FilenameCleaner.sanitize(name, sep_string, false),
+         File.extname(file),
+        ].join('')
       else
         # return the full path of the original file
         File.expand_path(file)

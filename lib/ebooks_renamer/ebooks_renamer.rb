@@ -16,13 +16,14 @@ module EbooksRenamer
       files.each_with_index do |file, index|
         # process as many files as possible
         begin
-          new_name = formatted_name(file, options[:sep_string])
-          if file != new_name
-            puts "#{index + 1} of #{files.length}: Old name: '#{file}'"
+          old_name = File.expand_path(file)
+          new_name = formatted_name(old_name, options[:sep_string])
+          if old_name != new_name
+            puts "#{index + 1} of #{files.length}: Old name: '#{old_name}'"
             puts "#{index + 1} of #{files.length}: New name: '#{new_name}'"
-            FileUtils.mv(file, new_name) if options[:commit]
+            FileUtils.mv(old_name, new_name) if options[:commit]
           else
-            puts "#{index + 1} of #{files.length}: Result  : '#{file}' is identical so no action taken."
+            puts "#{index + 1} of #{files.length}: Result  : '#{old_name}' is identical so no action taken."
           end
         rescue Exception => e
           puts "Skip file '#{file}'"

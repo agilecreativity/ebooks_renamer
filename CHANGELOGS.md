@@ -1,7 +1,10 @@
 ## Changelogs
 
+### 0.1.3
+- Fix the mistake when comparing the old name vs new name
+
 ### 0.1.2
--  Update to use the new version of filename_cleaner gem
+- Update to use the new version of filename_cleaner gem
 
 ### 0.1.1
 - Simplify the api and minor code cleanup

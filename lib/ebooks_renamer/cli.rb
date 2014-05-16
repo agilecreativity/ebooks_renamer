@@ -1,24 +1,21 @@
-require 'thor'
-require 'agile_utils'
-require_relative 'ebooks_renamer'
+require "thor"
+require "agile_utils"
+require_relative "ebooks_renamer"
 module EbooksRenamer
   class CLI < Thor
-    desc 'rename', 'Rename ebooks based on given criteria'
+    desc "rename", "Rename ebooks based on given criteria"
     method_option *AgileUtils::Options::BASE_DIR
     method_option *AgileUtils::Options::RECURSIVE
     method_option *AgileUtils::Options::VERSION
-
     method_option :sep_string,
-                  aliases: '-s',
-                  desc: 'Separator string between words in filename',
-                  default: '.'
-
+                  aliases: "-s",
+                  desc: "Separator string between words in filename",
+                  default: "."
     method_option :commit,
-                  aliases: '-c',
-                  desc: 'Make change permanent',
+                  aliases: "-c",
+                  desc: "Make change permanent",
                   type: :boolean,
                   default: false
-
     def rename
       opts = options.symbolize_keys
       if opts[:version]
@@ -26,17 +23,17 @@ module EbooksRenamer
         exit
       end
       # Add the default supported extensions
-      opts.merge!(exts: %w(pdf epub mobi))
+      opts.merge!(exts: %w[pdf epub mobi])
       puts "Your options #{opts}"
       EbooksRenamer.rename(opts)
     end
 
-    desc 'usage', 'Display help screen'
+    desc "usage", "Display help screen"
     def usage
       puts <<-EOS
 
 Usage:
-  ebooks_renamer rename
+  ebooks_renamer
 
 Options:
   -b, [--base-dir=BASE_DIR]                # Base directory

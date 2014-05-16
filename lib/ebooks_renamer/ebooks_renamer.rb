@@ -1,13 +1,13 @@
-require 'mobi'
-require 'epubinfo'
-require 'pdf-reader'
-require 'ostruct'
-require 'fileutils'
-require 'filename_cleaner'
-require 'code_lister'
-require_relative 'pdf_parser'
-require_relative 'epub_parser'
-require_relative 'mobi_parser'
+require "mobi"
+require "epubinfo"
+require "pdf-reader"
+require "ostruct"
+require "fileutils"
+require "filename_cleaner"
+require "code_lister"
+require_relative "pdf_parser"
+require_relative "epub_parser"
+require_relative "mobi_parser"
 module EbooksRenamer
   CustomError = Class.new(StandardError)
   class << self
@@ -25,20 +25,20 @@ module EbooksRenamer
           else
             puts "#{index + 1} of #{files.length}: Result  : '#{old_name}' is identical so no action taken."
           end
-        rescue Exception => e
+        rescue => e
           puts "Skip file '#{file}'"
           puts "Due to the unexpected error: #{e.message}"
           next
         end
       end
       unless options[:commit]
-        puts '------------------------------------------------------------------'
-        puts 'This is a dry run only, to actually rename please specify --commit'
-        puts '------------------------------------------------------------------'
+        puts "------------------------------------------------------------------"
+        puts "This is a dry run only, to actually rename please specify --commit"
+        puts "------------------------------------------------------------------"
       end
     end
 
-    private
+  private
 
     def formatted_name(file, sep_string)
       meta = parse(file)
@@ -53,7 +53,7 @@ module EbooksRenamer
          File::SEPARATOR,
          FilenameCleaner.sanitize(name, sep_string, false),
          File.extname(file),
-        ].join('')
+        ].join("")
       else
         # return the full path of the original file
         File.expand_path(file)
@@ -73,11 +73,11 @@ module EbooksRenamer
 
     def parse(filename)
       case File.extname(filename)
-      when '.epub'
+      when ".epub"
         Parser.new(EpubParser.parse(filename)).parser
-      when '.pdf'
+      when ".pdf"
         Parser.new(PdfParser.parse(filename)).parser
-      when '.mobi'
+      when ".mobi"
         Parser.new(MobiParser.parse(filename)).parser
       else
         fail "File type #{File.extname(file)} is not supported"

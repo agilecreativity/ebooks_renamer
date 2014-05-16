@@ -17,8 +17,7 @@ Gem::Specification.new do |spec|
                                                                  README.md
                                                                  LICENSE
                                                                  .rubocop.yml
-                                                                 .gitignore
-                                                                 rubocop-todo.yml)
+                                                                 .gitignore)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']

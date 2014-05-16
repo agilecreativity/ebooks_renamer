@@ -1,4 +1,8 @@
 #!/usr/bin/env ruby
-require_relative '../lib/ebooks_renamer'
+require_relative "../lib/ebooks_renamer"
 include EbooksRenamer
-EbooksRenamer::CLI.start(ARGV)
+if ARGV.empty?
+  EbooksRenamer::CLI.start(%w[usage])
+else
+  EbooksRenamer::CLI.start(%w[rename].concat(ARGV))
+end

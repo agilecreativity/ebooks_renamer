@@ -60,7 +60,7 @@ Or install it yourself as:
 
 ```
 Usage:
-  ebooks_renamer rename
+  ebooks_renamer
 
 Options:
   -b, [--base-dir=BASE_DIR]                # Base directory
@@ -90,11 +90,11 @@ rbenv local 2.1.2 # or any version after 1.9+
 gem install ebooks_renamer
 
 # run the command without making any changes
-ebooks_renamer rename --base-dir . --recursive
+ebooks_renamer --base-dir . --recursive
 
 # If you are happy with what will be changed then you can make your change permanent
 
-ebooks_renamer rename --base-dir . --recursive --commit
+ebooks_renamer --base-dir . --recursive --commit
 
 # To change the default separator string `sep_string` (default to '.' - dot string)
 # e.g. this will use the '_' (underscore) to separate each word in the output

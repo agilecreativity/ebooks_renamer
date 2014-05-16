@@ -1,5 +1,4 @@
 class Hash
-
   # File activesupport/lib/active_support/core_ext/hash/keys.rb
   #
   # hash = { name: 'Rob', age: '28' }

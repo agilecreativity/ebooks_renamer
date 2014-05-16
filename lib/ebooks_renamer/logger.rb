@@ -1,4 +1,4 @@
-require 'logger'
+require "logger"
 module EbooksRenamer
   class << self
     attr_writer :logger

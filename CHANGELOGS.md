@@ -1,5 +1,11 @@
 ## Changelogs
 
+### 0.1.5
+
+- Use core_ext functionality from `agile_utils`
+- Remove extra `require pry` in the library
+- Be specific about version of required gems
+
 ### 0.1.4
 
 - Simplify the CLI usage

@@ -1,6 +1,8 @@
 module EbooksRenamer
   class PdfParser
     class << self
+      using AgileUtils::BlankExt
+
       def parse(filename)
         File.open(filename, "rb") do |io|
           reader = PDF::Reader.new(io)

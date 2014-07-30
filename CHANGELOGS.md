@@ -1,5 +1,10 @@
 ## Changelogs
 
+### 0.2.0
+
+- Use refinement instead of monkeypatching (need ruby 2.0.0+)
+- Minor code cleanup
+
 ### 0.1.5
 
 - Use core_ext functionality from `agile_utils`

@@ -8,9 +8,12 @@ require "code_lister"
 require_relative "pdf_parser"
 require_relative "epub_parser"
 require_relative "mobi_parser"
+
 module EbooksRenamer
   CustomError = Class.new(StandardError)
   class << self
+    using AgileUtils::BlankExt
+
     def rename(options = {})
       files = CodeLister.files(options)
       files.each_with_index do |file, index|
@@ -38,7 +41,7 @@ module EbooksRenamer
       end
     end
 
-  private
+    private
 
     def formatted_name(file, sep_string)
       meta = parse(file)

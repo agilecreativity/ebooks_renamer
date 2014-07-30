@@ -3,6 +3,8 @@ require "agile_utils"
 require_relative "ebooks_renamer"
 module EbooksRenamer
   class CLI < Thor
+    using AgileUtils::HashExt
+
     desc "rename", "Rename ebooks based on given criteria"
     method_option *AgileUtils::Options::BASE_DIR
     method_option *AgileUtils::Options::RECURSIVE

@@ -1,6 +1,7 @@
 module EbooksRenamer
   class EpubParser
     class << self
+      using AgileUtils::BlankExt
       def parse(filename)
         info = EPUBInfo.get(filename)
         if info.present?

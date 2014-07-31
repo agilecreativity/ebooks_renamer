@@ -1,8 +1,12 @@
 ## Changelogs
 
+### 0.2.1
+
+- Make ruby version 2.1.0+ explicit in the gemspec
+
 ### 0.2.0
 
-- Use refinement instead of monkeypatching (need ruby 2.0.0+)
+- Use refinement instead of monkeypatching (need ruby 2.1.0+)
 - Minor code cleanup
 
 ### 0.1.5

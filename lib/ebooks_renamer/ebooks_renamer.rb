@@ -12,8 +12,6 @@ require_relative "mobi_parser"
 module EbooksRenamer
   CustomError = Class.new(StandardError)
   class << self
-    using AgileUtils::BlankExt
-
     def rename(options = {})
       files = CodeLister.files(options)
       files.each_with_index do |file, index|

@@ -1,5 +1,10 @@
 ## Changelogs
 
+### 0.2.2
+
+- Support ruby version 1.9.3+
+- Minor code cleanup
+
 ### 0.2.1
 
 - Make ruby version 2.1.0+ explicit in the gemspec

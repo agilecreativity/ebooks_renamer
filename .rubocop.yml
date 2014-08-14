@@ -20,14 +20,6 @@ MethodLength:
 BlockNesting:
   Max: 4
 
-# Align with the style guide.
-CollectionMethods:
-  PreferredMethods:
-    collect:  'map'
-    inject:   'reduce'
-    find:     'detect'
-    find_all: 'select'
-
 AccessModifierIndentation:
   Enabled: false
 

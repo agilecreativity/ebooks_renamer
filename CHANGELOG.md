@@ -1,5 +1,10 @@
 ## Changelogs
 
+### 0.2.3
+
+- Use `require` instead of `require_relative` when possible
+- Misc code cleanup
+
 ### 0.2.2
 
 - Support ruby version 1.9.3+

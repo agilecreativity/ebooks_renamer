@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 require_relative "../lib/ebooks_renamer"
-include EbooksRenamer
 if ARGV.empty?
   EbooksRenamer::CLI.start(%w[usage])
 else

@@ -1,14 +1,3 @@
-require "mobi"
-require "epubinfo"
-require "pdf-reader"
-require "ostruct"
-require "fileutils"
-require "filename_cleaner"
-require "code_lister"
-require_relative "pdf_parser"
-require_relative "epub_parser"
-require_relative "mobi_parser"
-
 module EbooksRenamer
   CustomError = Class.new(StandardError)
   class << self

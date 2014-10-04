@@ -1,6 +1,3 @@
-require "thor"
-require "agile_utils"
-require_relative "ebooks_renamer"
 module EbooksRenamer
   class CLI < Thor
     desc "rename", "Rename ebooks based on given criteria"

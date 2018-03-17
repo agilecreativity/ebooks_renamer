@@ -1,5 +1,9 @@
 ## Changelogs
 
+### 0.2.5
+
+- Update gem's dependencies and fix some bugs
+
 ### 0.2.4
 
 - Update gem's dependencies and fix some bugs

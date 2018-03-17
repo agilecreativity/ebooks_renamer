@@ -38,7 +38,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'minitest', '~> 5.4'
   spec.add_development_dependency 'minitest-spec-context', '~> 0.0'
   spec.add_development_dependency 'pry', '~> 0.10'
-  spec.add_development_dependency 'rake', '~> 10.3'
-  spec.add_development_dependency 'rubocop', '~> 0.26'
-  spec.add_development_dependency 'yard', '~> 0.8'
+  spec.add_development_dependency 'rake', '~> 12.3'
+  spec.add_development_dependency 'rubocop', '~> 0.53'
+  spec.add_development_dependency 'yard', '~> 0.9'
 end
